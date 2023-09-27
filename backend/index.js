@@ -27,6 +27,10 @@ main().catch((err) => console.log(err));
   next();
 }); */
 
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
+
 app.use(cors());
 
 app.use(express.json());
