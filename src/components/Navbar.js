@@ -24,12 +24,11 @@ export default function NavbarComponent() {
         style={{ backgroundColor: "#0e1111" }}
       >
         <Container>
-          <Navbar.Brand
-            to="/"
-            style={{ fontSize: "1.8rem", fontWeight: "500" }}
-          >
-            Saucey
-          </Navbar.Brand>
+          <Link to="/">
+            <Navbar.Brand style={{ fontSize: "1.8rem", fontWeight: "500" }}>
+              Saucey
+            </Navbar.Brand>
+          </Link>
           <Nav className="w-100 d-flex justify-content-between">
             <div>
               <Link
