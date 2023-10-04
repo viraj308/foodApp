@@ -5,8 +5,6 @@ import CardComponent from "../components/Card";
 import ControlledCarousel from "../components/ControlledCarousel.js.js";
 import Container from "react-bootstrap/esm/Container";
 
-import { useCart, useDispatchCart } from "../components/ContextReducer";
-
 export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
   const [foodItems, setfoodItems] = useState([]);
