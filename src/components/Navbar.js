@@ -25,7 +25,7 @@ export default function NavbarComponent() {
       >
         <Container>
           <Navbar.Brand
-            href="#home"
+            to="/"
             style={{ fontSize: "1.8rem", fontWeight: "500" }}
           >
             Saucey
