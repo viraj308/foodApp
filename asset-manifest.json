@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/foodApp/static/css/main.2834657f.css",
-    "main.js": "/foodApp/static/js/main.961326bf.js",
+    "main.js": "/foodApp/static/js/main.87b131c7.js",
     "static/media/berries.jpg": "/foodApp/static/media/berries.bab7b28e8cdefb860bfa.jpg",
     "static/media/vegetables.jpg": "/foodApp/static/media/vegetables.e2c4a985054d50c5b6ac.jpg",
     "static/media/ice-cream.jpg": "/foodApp/static/media/ice-cream.a75d65147fcd99b1062a.jpg",
     "index.html": "/foodApp/index.html",
     "main.2834657f.css.map": "/foodApp/static/css/main.2834657f.css.map",
-    "main.961326bf.js.map": "/foodApp/static/js/main.961326bf.js.map"
+    "main.87b131c7.js.map": "/foodApp/static/js/main.87b131c7.js.map"
   },
   "entrypoints": [
     "static/css/main.2834657f.css",
-    "static/js/main.961326bf.js"
+    "static/js/main.87b131c7.js"
   ]
 }
