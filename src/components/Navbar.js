@@ -24,7 +24,7 @@ export default function NavbarComponent() {
         style={{ backgroundColor: "#0e1111" }}
       >
         <Container>
-          <Link to="/">
+          <Link to="/" style={{ textDecoration: "none" }}>
             <Navbar.Brand style={{ fontSize: "1.8rem", fontWeight: "500" }}>
               Saucey
             </Navbar.Brand>
