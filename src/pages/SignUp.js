@@ -16,21 +16,24 @@ export default function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/createuser", {
-        method: "POST",
-        cache: "no-cache",
-        credentials: "same-origin",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: inputText.name,
-          email: inputText.email,
-          password: inputText.password,
-          location: inputText.address,
-        }),
-      });
+      const response = await fetch(
+        "https://foodappserver-847f.onrender.com/api/createuser",
+        {
+          method: "POST",
+          cache: "no-cache",
+          credentials: "same-origin",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: inputText.name,
+            email: inputText.email,
+            password: inputText.password,
+            location: inputText.address,
+          }),
+        }
+      );
       const result = await response.json();
       console.log("Successs: ", result);
     } catch (error) {

@@ -15,19 +15,22 @@ export default function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://localhost:4000/api/loginuser", {
-        method: "POST",
-        cache: "no-cache",
-        credentials: "same-origin",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          email: inputText.email,
-          password: inputText.password,
-        }),
-      });
+      const response = await fetch(
+        "https://foodappserver-847f.onrender.com/api/loginuser",
+        {
+          method: "POST",
+          cache: "no-cache",
+          credentials: "same-origin",
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            email: inputText.email,
+            password: inputText.password,
+          }),
+        }
+      );
       const result = await response.json();
       console.log("Successs: ", result);
       localStorage.setItem("authToken", result.authToken);

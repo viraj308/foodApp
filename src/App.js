@@ -5,12 +5,12 @@ import SignUp from "./pages/SignUp";
 
 import "./App.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createHashRouter, RouterProvider } from "react-router-dom";
 import { CartProvider } from "./components/ContextReducer";
 import Cart from "./components/Cart";
 import MyOrder from "./pages/MyOrder";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <Home />,
