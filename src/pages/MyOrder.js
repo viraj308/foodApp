@@ -36,7 +36,7 @@ export default function MyOrder() {
       <div>
         <Navbar />
       </div>
-      <div className="h-100px" style={{ minHeight: "86.5vh" }}>
+      <div style={{ minHeight: "85vh" }}>
         <div className="container">
           <div className="row">
             {orderData !== {}
