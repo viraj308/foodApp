@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import NavbarComponent from "../components/Navbar";
-import CardComponent from "../components/Card";
 import ControlledCarousel from "../components/ControlledCarousel.js.js";
 import Container from "react-bootstrap/esm/Container";
+import CardComponent from "../components/Card";
 
 export default function Home() {
   const [foodCat, setFoodCat] = useState([]);
@@ -63,15 +63,11 @@ export default function Home() {
                       )
                       .map((filteredItems) => {
                         return (
-                          <div
-                            key={filteredItems.id}
-                            className="col-12 col-md-6 col-lg-3"
-                          >
-                            <CardComponent
-                              foodItem={filteredItems}
-                              options={filteredItems.options[0]}
-                            />
-                          </div>
+                          <CardComponent
+                            key={filteredItems}
+                            foodItem={filteredItems}
+                            options={filteredItems.options[0]}
+                          />
                         );
                       })
                   ) : (

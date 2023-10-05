@@ -65,66 +65,62 @@ export default function CardComponent(props) {
   }, []);
 
   return (
-    <div style={{ padding: "2em 0" }}>
-      <Container>
-        <Card
-          /* bg="white" */ /* text="black" */
-          style={{
-            width: "20rem",
-            "background-color": "#414a4c",
-            color: "#FFFFF0",
-          }}
-        >
-          <Card.Img
-            variant="top"
-            src={props.foodItem.img}
-            style={{ height: "200px" }}
-          />
-          <Card.Body>
-            <Card.Title>{props.foodItem.name}</Card.Title>
-            <Card.Text>
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </Card.Text>
-            <div className="container px-0">
-              <select name="quantity" onChange={(e) => setQty(e.target.value)}>
-                {Array.from(Array(5), (e, num) => {
-                  return (
-                    <option key={num + 1} value={num + 1}>
-                      {num + 1}
-                    </option>
-                  );
-                })}
-              </select>
-              <select
-                className="proportion ms-3"
-                ref={priceRef}
-                onChange={(e) => setSize(e.target.value)}
-              >
-                {priceOptions.map((data) => {
-                  return (
-                    <option key={data} value={data}>
-                      {data}
-                    </option>
-                  );
-                })}
-                {/* <option value="half">Half</option>
+    <Card
+      /* bg="white" */ /* text="black" */
+      style={{
+        paddingLeft: "0",
+        paddingRight: "0",
+        width: "20rem",
+        margin: "1rem",
+        "background-color": "#414a4c",
+        color: "#FFFFF0",
+      }}
+    >
+      <Card.Img
+        variant="top"
+        src={props.foodItem.img}
+        style={{ height: "200px" }}
+      />
+      <Card.Body>
+        <Card.Title>{props.foodItem.name}</Card.Title>
+        <Card.Text>
+          Some quick example text to build on the card title and make up the
+          bulk of the card's content.
+        </Card.Text>
+        <div className="container px-0">
+          <select name="quantity" onChange={(e) => setQty(e.target.value)}>
+            {Array.from(Array(5), (e, num) => {
+              return (
+                <option key={num + 1} value={num + 1}>
+                  {num + 1}
+                </option>
+              );
+            })}
+          </select>
+          <select
+            className="proportion ms-3"
+            ref={priceRef}
+            onChange={(e) => setSize(e.target.value)}
+          >
+            {priceOptions.map((data) => {
+              return (
+                <option key={data} value={data}>
+                  {data}
+                </option>
+              );
+            })}
+            {/* <option value="half">Half</option>
                 <option value="full">Full</option> */}
-              </select>
-              <span className="price-text fs-5 fw-bold ms-3">
-                Total price {finalPrice}
-              </span>
-              <hr />
-              <button
-                className="btn bg-white text-black"
-                onClick={handleAddCart}
-              >
-                Add to Cart
-              </button>
-            </div>
-          </Card.Body>
-        </Card>
-      </Container>
-    </div>
+          </select>
+          <span className="price-text fs-5 fw-bold ms-3">
+            Total price {finalPrice}
+          </span>
+          <hr />
+          <button className="btn bg-white text-black" onClick={handleAddCart}>
+            Add to Cart
+          </button>
+        </div>
+      </Card.Body>
+    </Card>
   );
 }

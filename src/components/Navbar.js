@@ -7,6 +7,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../components/ContextReducer";
 import Modal from "../Modal";
 import Cart from "./Cart";
+import NavbarCollapse from "react-bootstrap/esm/NavbarCollapse";
 
 export default function NavbarComponent() {
   const [cartView, setCartview] = useState(false);
@@ -21,6 +22,7 @@ export default function NavbarComponent() {
     <>
       <Navbar
         /* bg="success" */ data-bs-theme="dark"
+        expand="sm"
         style={{ backgroundColor: "#0e1111" }}
       >
         <Container>
@@ -29,69 +31,71 @@ export default function NavbarComponent() {
               Saucey
             </Navbar.Brand>
           </Link>
-          <Nav className="w-100 d-flex justify-content-between">
-            <div>
-              <Link
-                to="/"
-                className="btn text-white"
-                style={{ fontWeight: "500" }}
-              >
-                Home
-              </Link>
-              {localStorage.getItem("authToken") ? (
+          <Navbar.Toggle />
+          <Navbar.Collapse>
+            <Nav className="w-100 d-flex justify-content-between align-items-center">
+              <div>
                 <Link
-                  to="/myorder"
+                  to="/"
                   className="btn text-white"
                   style={{ fontWeight: "500" }}
                 >
-                  My Orders
+                  Home
                 </Link>
-              ) : (
-                " "
-              )}
-            </div>
-            <div className="d-flex flex-row">
-              {!localStorage.getItem("authToken") ? (
-                <>
-                  <Link to="/login" className="btn bg-white text-black">
-                    Login
-                  </Link>
+                {localStorage.getItem("authToken") ? (
                   <Link
-                    to="/signup"
-                    className="btn bg-white text-black"
-                    style={{ "margin-left": "1em" }}
+                    to="/myorder"
+                    className="btn text-white"
+                    style={{ fontWeight: "500" }}
                   >
-                    SignUp
+                    My Orders
                   </Link>
-                </>
-              ) : (
-                <>
-                  <Link
-                    className="btn bg-white text-black me-2"
-                    onClick={() => setCartview(true)}
-                  >
-                    My Cart{" "}
-                    <Badge pill bg="danger ms-1">
-                      {data.length}
-                    </Badge>
-                  </Link>
-                  {cartView ? (
-                    <Modal onClose={() => setCartview(false)}>
-                      <Cart />
-                    </Modal>
-                  ) : null}
-                  <Link
-                    to="/login"
-                    className="btn bg-white text-black"
-                    onClick={handleLogout}
-                  >
-                    Logout
-                  </Link>
-                </>
-              )}
-            </div>
+                ) : (
+                  " "
+                )}
+              </div>
+              <div className="d-flex flex-row my-3">
+                {!localStorage.getItem("authToken") ? (
+                  <>
+                    <Link to="/login" className="btn bg-white text-black">
+                      Login
+                    </Link>
+                    <Link
+                      to="/signup"
+                      className="btn bg-white text-black"
+                      style={{ "margin-left": "1em" }}
+                    >
+                      SignUp
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      className="btn bg-white text-black me-2"
+                      onClick={() => setCartview(true)}
+                    >
+                      My Cart{" "}
+                      <Badge pill bg="danger ms-1">
+                        {data.length}
+                      </Badge>
+                    </Link>
+                    {cartView ? (
+                      <Modal onClose={() => setCartview(false)}>
+                        <Cart />
+                      </Modal>
+                    ) : null}
+                    <Link
+                      to="/login"
+                      className="btn bg-white text-black"
+                      onClick={handleLogout}
+                    >
+                      Logout
+                    </Link>
+                  </>
+                )}
+              </div>
 
-            {/* <div className="d-flex flex-row">
+              {/* <div className="d-flex flex-row">
               <Link to="/login" className="btn bg-white text-black">
                 Login
               </Link>
@@ -104,7 +108,7 @@ export default function NavbarComponent() {
               </Link>
             </div> */}
 
-            {/* <div className="d-flex flex-row">
+              {/* <div className="d-flex flex-row">
               <Link to="/login" className="btn bg-white text-black">
                 Login
               </Link>
@@ -116,7 +120,8 @@ export default function NavbarComponent() {
                 SignUp
               </Link>
             </div> */}
-          </Nav>
+            </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
     </>
